@@ -6,48 +6,28 @@ var showlist = [];
         var plugin = this;
         var $element = $(element);
         var $parntElmnt;
-        var targetEl;
-        var $targetEl;
         var dataatts = $element.data();
 
         var defaults = {
             parentEl: 'body',
-            targetEl: '#test',
         };
         plugin.settings = {};
 
         function hideAllBut() {
-            var testVar1 = null;
-            var testVar2 = null;
-            targetEl = plugin.settings.targetEl;
-            $targetEl = $(targetEl);
 
-            $parntElmnt.children().each(function(index, lElem) {
-                $lElem = $(lElem);
-
-                if (plugin.settings.targetEl.charAt(0) == (".")) {
-                    console.log("class");
-                    testVar1 = $lElem.attr("class");
-                    testVar2 = $targetEl.attr("class");
-                } else if (plugin.settings.targetEl.charAt(0) == ("#")) {
-                    console.log("id");
-                    testVar1 = $lElem.attr("id");
-                    testVar2 = $targetEl.attr("id");
+            $parntElmnt.children().each(function(index, loopEl) {
+                if (loopEl === element) {
+                   showlist.push(loopEl);
                 } else {
-                    console.log("tag");
-                    testVar1 = $lElem.prop("tagName");
-                    testVar2 = $targetEl.prop("tagName");
-                }
-                $targetEl = $(plugin.settings.targetEl);
-
-                if (testVar1 != testVar2) {
-
-                    $lElem.hide();
-                } else {
-                    showlist.push(lElem);
-
+                    $(loopEl).hide();
                 }
             });
+
+            //-- show loop 
+           $.each(showlist,function(index, loopEl) {
+                $(loopEl).show();
+            });
+           showlist = [];
         }
         plugin.init = function() {
             plugin.settings = $.extend({}, defaults, options, dataatts);
