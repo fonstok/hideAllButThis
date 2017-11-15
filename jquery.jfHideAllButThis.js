@@ -12,7 +12,7 @@ var showlist = [];
 
         var defaults = {
             parentEl: 'body',
-            targetEl: '#s_10',
+            targetEl: '#test',
         };
         plugin.settings = {};
 
