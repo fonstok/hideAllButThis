@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Hide All But This</title>
+    <link href="index.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <nav>
+        <div class="c-zone">
+            <ul>
+                <li><a href="#">Nav One</a></li>
+                <li><a href="#">Nav Two</a></li>
+                <li><a href="#">Nav Three</a></li>
+                <li><a href="#">Nav Four</a></li>
+            </ul>
+        </div>
+    </nav>
+    <header>
+        <div class="c-zone">
+            <h1>Header Content</h1>
+        </div>
+    </header>
+    <section id="s_10">
+        <div class="c-zone">
+            <div class="column c_01">
+                <p>.column</p>
+            </div>
+            <div class="column">
+                <p>.column</p>
+            </div>
+            <div class="column">
+                <p>.column</p>
+            </div>
+        </div>
+    </section>
+    <section id="s_20">
+        <div class="c-zone">
+            <div class="column">
+                <p>.column</p>
+            </div>
+            <div class="column">
+                <p>.column</p>
+            </div>
+        </div>
+    </section>
+    <section id="s_30">
+        <div class="c-zone">
+            <div class="column">
+                <p>.column</p>
+            </div>
+            <div class="column">
+                <p>.column</p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="c-zone">
+            <p>Footer Content</p>
+        </div>
+    </footer>
+    <nav>
+        <div class="c-zone">
+            <ul>
+                <li><a href="#">Nav One</a></li>
+                <li><a href="#">Nav Two</a></li>
+                <li><a href="#">Nav Three</a></li>
+                <li><a href="#">Nav Four</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- ========= scripts ========== -->
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+    <script type="text/javascript" src="../jquery.jfHideAllButThis.js"></script>
+    <script type="text/javascript">
+    $.jfHideAllButThis();
+    //$('.c_01').jfHideAllButMe({parentEl:'#s_10 .c-zone'});
+    </script>
+</body>
+
+</html>
